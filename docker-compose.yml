@@ -16,7 +16,7 @@ services:
       - devops-network
 
   app:
-    image: DOCKER_HUB_IMAGE_PLACEHOLDER
+    image: leticialm/s107-project:latest
     container_name: app
     networks:
       - devops-network
