@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-        stage('Instalar Deps') {
+        stage('Instalar Dependências do Projeto') {
             steps {
                 sh '''
                     python3 -m pip install --break-system-packages --user \
