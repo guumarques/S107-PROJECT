@@ -87,19 +87,7 @@ pipeline {
 
         stage('Notificação') {
             steps {
-                script {
-                    def buildStatus = currentBuild.currentResult
-                    def jobName     = env.JOB_NAME
-                    def buildNumber = env.BUILD_NUMBER
-                    def buildUrl    = env.BUILD_URL
-
-                    sh """
-                        python3 scripts/notificar.py \\
-                            --status  '${buildStatus}' \\
-                            --job     '${jobName}' \\
-                            --build   '${buildNumber}' \\
-                            --url     '${buildUrl}'
-                    """
+                    sh 'python3 scripts/notificar.py'
                 }
             }
         }
