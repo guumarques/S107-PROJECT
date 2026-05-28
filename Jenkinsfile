@@ -66,13 +66,11 @@ pipeline {
         stage('Notificação') {
             steps {
                 script {
-                    
-                        env.STATUS_BUILD = "${currentBuild.currentResult}"
-                    }
-                    sh 'python3 scripts/notificar.py'
+                    env.STATUS_BUILD = "${currentBuild.currentResult}"
                 }
+                sh 'python3 scripts/notificar.py'
             }
-}
+        }
     }
 
     post {
