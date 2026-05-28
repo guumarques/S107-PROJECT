@@ -85,11 +85,13 @@ pipeline {
             }
         }
 
-        stage('Notificação') {
-            steps {
+        stage('Notificação') 
+        {
+            steps 
+            {
                     sh 'python3 scripts/notificar.py'
                 }
-            }
+            
         }
     }
 
