@@ -61,30 +61,6 @@ pipeline {
             }
         }
 
-        stage('Docker Build e Push') {
-            steps {
-                withCredentials([
-                    usernamePassword(
-                        credentialsId: env.DOCKER_HUB_CREDENTIAL_ID,
-                        usernameVariable: 'DOCKER_USER',
-                        passwordVariable: 'DOCKER_TOKEN'
-                    )
-                ]) {
-                    sh """
-                        set -e
-                        echo \$DOCKER_TOKEN | docker login -u \$DOCKER_USER --password-stdin
-                        docker build \\
-                            -t ${env.DOCKER_IMAGE}:${env.BUILD_NUMBER} \\
-                            -t ${env.DOCKER_IMAGE}:latest \\
-                            .
-                        docker push ${env.DOCKER_IMAGE}:${env.BUILD_NUMBER}
-                        docker push ${env.DOCKER_IMAGE}:latest
-                        docker logout || true
-                    """
-                }
-            }
-        }
-
         stage('Notificação') 
         {
             steps 
