@@ -10,6 +10,8 @@ pipeline {
         EMAIL_DESTINO              = credentials('EMAIL_DESTINO')
     }
 
+    stages {
+        
         stage('Instalar Dependências do Projeto') {
             steps {
                 sh '''
