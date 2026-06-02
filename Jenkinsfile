@@ -6,15 +6,12 @@ pipeline {
         PYTHON                   = 'python3'
         DOCKER_IMAGE             = 'leticialm/s107-project'
         DOCKER_HUB_CREDENTIAL_ID = 'docker-hub-leticialm'
+        EMAIL_REMETENTE            = credentials('EMAIL_REMETENTE')
+        EMAIL_DESTINO              = credentials('EMAIL_DESTINO')
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
+    
         stage('Instalar Dependências do Projeto') {
             steps {
                 sh '''
@@ -85,27 +82,21 @@ pipeline {
             }
         }
 
-        stage('Notificação') {
-            steps {
-                script {
-                    def buildStatus = currentBuild.currentResult
-                    def jobName     = env.JOB_NAME
-                    def buildNumber = env.BUILD_NUMBER
-                    def buildUrl    = env.BUILD_URL
-
-                    sh """
-                        python3 scripts/notificar.py \\
-                            --status  '${buildStatus}' \\
-                            --job     '${jobName}' \\
-                            --build   '${buildNumber}' \\
-                            --url     '${buildUrl}'
-                    """
+        stage('Notificação') 
+        {
+            steps 
+            {
+                withEnv([
+                    "STATUS_BUILD=${currentBuild.currentResult}",
+                ]) {
+                    sh 'python3 scripts/notificar.py'
                 }
             }
         }
     }
 
-    post {
+    post 
+    {
         always {
             echo "Pipeline encerrado | Status: ${currentBuild.currentResult}"
         }

@@ -13,3 +13,4 @@ site/test-report.html
 .idea/
 .coverage
 htmlcov/
+.env

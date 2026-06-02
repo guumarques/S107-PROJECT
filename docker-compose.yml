@@ -4,6 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.jenkins
+    environment:
+      SMTP_HOST: mailhog
+      SMTP_PORT: 1025
     container_name: jenkins
     restart: on-failure
     ports:
