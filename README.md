@@ -208,7 +208,7 @@ docker run --rm -it leticialm/s107-project:latest
 ### Modelos utilizados
  
 - **Claude Sonnet (Anthropic)** — Lilyan
-- **[PREENCHER]** — Ana Julia
+- **Claude (Anthropic) — via claude.ai** — Ana Julia
 - **[PREENCHER]** — Letícia
 - **[PREENCHER]** — Vitória
 - **[PREENCHER]** — Lucas
@@ -256,11 +256,34 @@ Usada em sessão contínua de pair programming ao longo de vários dias, cobrind
 
 ### Exemplos reais de prompts
  
-**Prompts:**
+**Prompt 1**
+>Como configurar um Dockerfile para rodar Jenkins com Python 3 instalado?
+
+Resposta aceita: a IA explicou como estender a imagem oficial do Jenkins instalando Python via apt-get e as ferramentas de teste via pip, mantendo boas práticas como voltar para USER jenkins ao final.
+
+**Prompt 2**
+>Como estruturar as stages de teste e build no Jenkinsfile para salvar artefatos no Jenkins?
+
+Resposta aceita: a IA explicou o uso de archiveArtifacts dentro do bloco post e como separar o relatório de testes do pacote gerado pelo build.
+
+**Prompt 3**
+>Variáveis como currentBuild.currentResult podem ser usadas diretamente dentro de sh no Jenkinsfile?
+
+Resposta aceita: a IA explicou que não funcionam com aspas simples e sugeriu capturar o valor em variável local dentro de um bloco script{} antes de passar ao shell.
+
+**Prompt 4**
+>Como identificar quais ramos do código não estão sendo cobertos pelos testes usando pytest-cov?
+
+Resposta aceita: a IA explicou o uso da flag --cov-report=term-missing que mostra exatamente as linhas não cobertas, o que ajudou a identificar os casos faltantes no editar_tarefa().
+
+**Prompt 5**
+>O Dockerfile está apontando vulnerabilidades críticas na imagem base do Jenkins, como resolver?
+
+Resposta aceita: a IA sugeriu trocar para a variante -slim e adicionar apt-get upgrade -y para reduzir CVEs herdados da imagem base.
 
 ### Dinâmica de uso
----
 
+Utilizada em sessões pontuais durante o desenvolvimento, consultando dúvidas específicas de configuração do Jenkins e cobertura de testes. A IA funcionou como apoio para entender comportamentos inesperados e revisar decisões técnicas, sempre com o código sendo escrito e validado pelo integrante.
 
 ### Para quê foi usada - Leticia:
 
