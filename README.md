@@ -209,7 +209,7 @@ docker run --rm -it leticialm/s107-project:latest
  
 - **Claude Sonnet (Anthropic)** — Lilyan
 - **Claude (Anthropic) — via claude.ai** — Ana Julia
-- **[PREENCHER]** — Letícia
+- **Claude (Anthropic) — via claude.ai** — Letícia
 - **[PREENCHER]** — Vitória
 - **[PREENCHER]** — Lucas
 - **[PREENCHER]** — Gustavo
@@ -287,11 +287,38 @@ Utilizada em sessões pontuais durante o desenvolvimento, consultando dúvidas e
 
 ### Para quê foi usada - Leticia:
 
+- Diagnóstico e correção de erros no `Dockerfile.jenkins` (binário Docker não encontrado, tag de imagem inválida, conflito de pip com ambiente externo)
+- Configuração do `docker-compose.yml` para permitir acesso ao socket do Docker dentro do container Jenkins (`/var/run/docker.sock` e `group_add`)
+- Debug de permissão no socket do Docker (identificação do GID 0 no Docker Desktop/Windows)
+- Reconfiguração do Jenkins após perda de volume
+- Entendimento de como o Docker Desktop no Windows gerencia o socket diferente do Linux
+
 ### Exemplos reais de prompts
  
-**Prompts:**
+**Prompt 1:**
+> "to com esse erro no jenkins: docker: not found / ERROR: script returned exit code 127"
+
+Resposta aceita com ajustes: a IA sugeriu inicialmente instalar o `docker.io` via apt, o que não resolveu o problema. Após mais investigação, a solução correta foi instalar o `docker-ce-cli` via repositório oficial do Docker, adicionando a chave GPG e o repositório antes da instalação
+
+**Prompt 2:**
+> "docker exec -it jenkins docker version
+> permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock"
+
+Resposta aceita: a IA identificou que o usuário `jenkins` não tinha permissão no socket do Docker e orientou a usar `group_add` no `docker-compose.yml` com o GID do socket, que no Docker Desktop no Windows é `0` (root).
+
+**Prompt 3:**
+> "docker compose build --no-cache jenkins
+> error: externally-managed-environment — pip não consegue instalar pacotes sistema"
+
+Resposta aceita: a IA identificou que o comando `pip install --upgrade pip` estava sem a flag `--break-system-packages`, causando falha no build. A correção foi adicionar a flag em todos os comandos pip do Dockerfile.
+
+**Prompt 4:**
+> "pq quando eu coloquei o group_add "0" (root) funcionou?"
+
+Resposta aceita: a IA explicou que no Docker Desktop no Windows o socket pertence ao grupo root (GID 0), diferente do Linux onde o GID costuma ser 999.
 
 ### Dinâmica de uso
+Usada em sessão contínua de debug do pipeline, cobrindo desde o erro inicial de `docker: not found` até a resolução de permissão no socket e reconfiguração do Jenkins após perda de volume.
 ---
 
 
