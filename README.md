@@ -211,7 +211,7 @@ docker run --rm -it leticialm/s107-project:latest
 - **Claude (Anthropic) — via claude.ai** — Ana Julia
 - **Claude (Anthropic) — via claude.ai** — Letícia
 - **Gemini 1.5 Pro (Google)** — Lucas
-- **[PREENCHER]** — Vitória
+- **Claude (Anthropic) — via claude.ai, ChatGPT** — Vitória
 - **[PREENCHER]** — Gustavo
 
 ---
@@ -318,6 +318,7 @@ Resposta aceita: a IA identificou que o comando `pip install --upgrade pip` esta
 Resposta aceita: a IA explicou que no Docker Desktop no Windows o socket pertence ao grupo root (GID 0), diferente do Linux onde o GID costuma ser 999.
 
 ### Dinâmica de uso
+
 Usada em sessão contínua de debug do pipeline, cobrindo desde o erro inicial de `docker: not found` até a resolução de permissão no socket e reconfiguração do Jenkins após perda de volume.
 ---
 
