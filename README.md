@@ -250,7 +250,6 @@ Resposta aceita: a IA identificou o conflito entre o wheel instalado pelo apt (D
  
 Usada em sessão contínua de pair programming ao longo de vários dias, cobrindo desde o entendimento dos conceitos até o debug de problemas reais no Docker.
 
-> **[ATENÇÃO PARA O GRUPO]:** Cada integrante deve preencher sua linha na lista de modelos utilizados e pode adicionar seus próprios prompts nesta seção.
 ---
 ### Para quê foi usada - Ana Julia:
 
@@ -285,6 +284,7 @@ Resposta aceita: a IA sugeriu trocar para a variante -slim e adicionar apt-get u
 
 Utilizada em sessões pontuais durante o desenvolvimento, consultando dúvidas específicas de configuração do Jenkins e cobertura de testes. A IA funcionou como apoio para entender comportamentos inesperados e revisar decisões técnicas, sempre com o código sendo escrito e validado pelo integrante.
 
+---
 ### Para quê foi usada - Leticia:
 
 - Diagnóstico e correção de erros no `Dockerfile.jenkins` (binário Docker não encontrado, tag de imagem inválida, conflito de pip com ambiente externo)
@@ -320,6 +320,7 @@ Resposta aceita: a IA explicou que no Docker Desktop no Windows o socket pertenc
 ### Dinâmica de uso
 
 Usada em sessão contínua de debug do pipeline, cobrindo desde o erro inicial de `docker: not found` até a resolução de permissão no socket e reconfiguração do Jenkins após perda de volume.
+
 ---
 
 
