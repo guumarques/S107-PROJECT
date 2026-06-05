@@ -253,6 +253,12 @@ Usada em sessão contínua de pair programming ao longo de vários dias, cobrind
 ---
 ### Para quê foi usada - Ana Julia:
 
+- Configuração do Dockerfile do Jenkins com Python 3 e ferramentas de CI
+- Estruturação do Jenkinsfile com as stages obrigatórias de teste, build e notificação
+- Identificação de ramos não cobertos pelos testes e escrita dos testes complementares
+- Debug de sintaxe Groovy no Jenkinsfile para uso correto de variáveis do pipeline
+- Resolução de vulnerabilidades na imagem base do Jenkins
+
 ### Exemplos reais de prompts
  
 **Prompt 1**
