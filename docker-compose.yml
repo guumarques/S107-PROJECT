@@ -26,7 +26,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: leticialm/s107-project:latest
     container_name: app
     environment:
       - DB_HOST=db
