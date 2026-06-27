@@ -22,7 +22,7 @@ services:
       - mailhog-network
 
   app:
-    image: leticialm/s107-project:latest
+    image: gustavo/s107-project:latest
     container_name: app
     environment:
       - DATABASE_PATH=data/tarefas.json

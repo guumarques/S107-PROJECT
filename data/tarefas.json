@@ -1,0 +1,21 @@
+{
+    "tarefas": {
+        "1": {
+            "titulo": "Teste",
+            "disciplina": "teste teste teste",
+            "descricao": "isso é um teste",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "20/06"
+        },
+        "2": {
+            "titulo": "Estudar BD",
+            "disciplina": "BD",
+            "descricao": "estudar para a prova",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "26/06"
+        }
+    },
+    "proximo_id": 3
+}
