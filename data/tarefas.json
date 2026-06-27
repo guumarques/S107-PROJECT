@@ -1,0 +1,301 @@
+{
+    "tarefas": {
+        "2": {
+            "titulo": "Tarefa 1",
+            "disciplina": "C14",
+            "descricao": "Desc 1",
+            "prioridade": "baixa",
+            "status": "pendente",
+            "prazo": "2026-03-25"
+        },
+        "3": {
+            "titulo": "Tarefa 2",
+            "disciplina": "C14",
+            "descricao": "Desc 2",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-03-26"
+        },
+        "4": {
+            "titulo": "Estudar",
+            "disciplina": "C14",
+            "descricao": "Descrição",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-03-25"
+        },
+        "5": {
+            "titulo": "Tarefa A",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-03-25"
+        },
+        "6": {
+            "titulo": "Tarefa B",
+            "disciplina": "C15",
+            "descricao": "Desc",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-03-26"
+        },
+        "7": {
+            "titulo": "Novo título",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-03-25"
+        },
+        "9": {
+            "titulo": "Concluir",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "concluida",
+            "prazo": "2026-03-25"
+        },
+        "10": {
+            "titulo": "Tarefa 1",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-03-25"
+        },
+        "11": {
+            "titulo": "Tarefa 2",
+            "disciplina": "C15",
+            "descricao": "Desc",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-03-26"
+        },
+        "12": {
+            "titulo": "Tarefa 3",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "baixa",
+            "status": "pendente",
+            "prazo": "2026-03-27"
+        },
+        "13": {
+            "titulo": "Tarefa 1",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-03-25"
+        },
+        "14": {
+            "titulo": "Tarefa 2",
+            "disciplina": "C15",
+            "descricao": "Desc",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-03-26"
+        },
+        "15": {
+            "titulo": "Tarefa 3",
+            "disciplina": "C16",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-03-27"
+        },
+        "16": {
+            "titulo": "Tarefa 1",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "concluida",
+            "prazo": "2026-03-25"
+        },
+        "17": {
+            "titulo": "Tarefa 2",
+            "disciplina": "C15",
+            "descricao": "Desc",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-03-26"
+        },
+        "18": {
+            "titulo": "Tarefa",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-03-25"
+        },
+        "19": {
+            "titulo": "Tarefa",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-03-25"
+        },
+        "20": {
+            "titulo": "Tarefa",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-03-25"
+        },
+        "21": {
+            "titulo": "Tarefa",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "concluida",
+            "prazo": "2026-03-25"
+        },
+        "22": {
+            "titulo": "Tarefa",
+            "disciplina": "C15",
+            "descricao": "Desc",
+            "prioridade": "baixa",
+            "status": "pendente",
+            "prazo": "2026-06-01"
+        },
+        "23": {
+            "titulo": "Tarefa",
+            "disciplina": "C14",
+            "descricao": "Descrição atualizada",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-06-01"
+        },
+        "24": {
+            "titulo": "Tarefa",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-12-31"
+        },
+        "25": {
+            "titulo": "Editado",
+            "disciplina": "C99",
+            "descricao": "Nova desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-12-31"
+        },
+        "26": {
+            "titulo": "Tarefa",
+            "disciplina": "Matemática",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-06-01"
+        },
+        "27": {
+            "titulo": "T1",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "alta",
+            "status": "concluida",
+            "prazo": "2026-06-01"
+        },
+        "28": {
+            "titulo": "T2",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-06-02"
+        },
+        "30": {
+            "titulo": "T2",
+            "disciplina": "C14",
+            "descricao": "Desc",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-06-02"
+        },
+        "31": {
+            "titulo": "Tarefa",
+            "disciplina": "C14",
+            "descricao": "",
+            "prioridade": "baixa",
+            "status": "pendente",
+            "prazo": "2026-06-01"
+        },
+        "32": {
+            "titulo": "Revisão",
+            "disciplina": "Cálculo I",
+            "descricao": "Lista 3",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-05-21"
+        },
+        "33": {
+            "titulo": "Estudo",
+            "disciplina": "Física",
+            "descricao": "Cap 2",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-06-01"
+        },
+        "34": {
+            "titulo": "Antigo",
+            "disciplina": "Química",
+            "descricao": "Lab",
+            "prioridade": "baixa",
+            "status": "pendente",
+            "prazo": "2026-04-10"
+        },
+        "35": {
+            "titulo": "Apagar",
+            "disciplina": "Prog",
+            "descricao": "TP",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-05-01"
+        },
+        "36": {
+            "titulo": "Manter",
+            "disciplina": "BD",
+            "descricao": "SQL",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-05-02"
+        },
+        "37": {
+            "titulo": "Entrega",
+            "disciplina": "SO",
+            "descricao": "Relatório",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-05-30"
+        },
+        "38": {
+            "titulo": "A1",
+            "disciplina": "Redes",
+            "descricao": "d1",
+            "prioridade": "alta",
+            "status": "pendente",
+            "prazo": "2026-01-01"
+        },
+        "39": {
+            "titulo": "A2",
+            "disciplina": "Redes",
+            "descricao": "d2",
+            "prioridade": "media",
+            "status": "pendente",
+            "prazo": "2026-01-02"
+        },
+        "40": {
+            "titulo": "A3",
+            "disciplina": "SO",
+            "descricao": "d3",
+            "prioridade": "baixa",
+            "status": "pendente",
+            "prazo": "2026-01-03"
+        }
+    },
+    "proximo_id": 41
+}
