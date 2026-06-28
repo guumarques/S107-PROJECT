@@ -1,7 +1,7 @@
 services:
 
   jenkins:
-    image: leticialm/s107-project:latest
+    image: gustavos23/s107-project:latest
     build:
       context: .
       dockerfile: Dockerfile.jenkins
@@ -23,30 +23,20 @@ services:
       - mailhog-network
 
   app:
-<<<<<<< HEAD
-    image: gustavo/s107-project:latest
-=======
     build:
       context: .
       dockerfile: Dockerfile
     stdin_open: true
     tty: true  
->>>>>>> 02248e7a1b5df6bacf266a8c1d15c653986a90d1
     container_name: app
     environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_USER=admin
-      - DB_PASSWORD=admin
-      - DB_NAME=tarefas
-    depends_on:
-      - db
+      - DATABASE_PATH=data/tarefas.json
     volumes:
       - ./data:/app/data
     networks:
       - devops-network
 
-  mailhog:
+  teste:
     image: mailhog/mailhog
     container_name: mailhog
     ports:
