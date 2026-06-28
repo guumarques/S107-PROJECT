@@ -30,7 +30,13 @@ services:
     tty: true  
     container_name: app
     environment:
-      - DATABASE_PATH=data/tarefas.json
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=admin
+      - DB_PASSWORD=admin
+      - DB_NAME=tarefas
+    depends_on:
+      - db
     volumes:
       - ./data:/app/data
     networks:
