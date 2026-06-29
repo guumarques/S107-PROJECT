@@ -1,7 +1,7 @@
 services:
 
   jenkins:
-    image: gustavos23/s107-project:latest
+    image: leticialm/s107-project:latest
     build:
       context: .
       dockerfile: Dockerfile.jenkins
