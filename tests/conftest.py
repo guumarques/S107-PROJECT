@@ -35,17 +35,23 @@ _VARS_POSTGRES = ["DB_HOST", "DB_PORT", "DB_USER", "DB_PASSWORD", "DB_NAME"]
 
 
 @pytest.fixture(autouse=True)
-def isolar_variaveis_postgres(monkeypatch, request):
+def isolar_variaveis_postgres(request, monkeypatch):
     """Remove as variáveis de Postgres do ambiente por padrão, para que
     GerenciadorTarefas() sem argumentos sempre caia no JSONTarefaRepository
     (isolado, em memória) nos testes comuns.
 
-    Os testes que precisam de Postgres de verdade usam explicitamente as
-    fixtures `postgres_env` / `postgres_repo`, que repõem essas variáveis
-    sob controle, então não são afetados por esta fixture.
+    Se o teste já depende explicitamente de `postgres_env` (ou `postgres_repo`,
+    que depende de `postgres_env`), esta fixture não faz nada — evitando que
+    ela apague, por ordem de execução, as variáveis que o próprio teste pediu
+    para ter configuradas.
     """
+    fixtures_do_teste = request.fixturenames
+    if "postgres_env" in fixtures_do_teste or "postgres_repo" in fixtures_do_teste:
+        yield
+        return
     for var in _VARS_POSTGRES:
         monkeypatch.delenv(var, raising=False)
+    yield
 
 
 def _conectar_postgres():
