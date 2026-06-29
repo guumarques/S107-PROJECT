@@ -8,11 +8,6 @@ services:
     environment:
       SMTP_HOST: mailhog
       SMTP_PORT: 1025
-      DB_HOST: db          # ← adicionar
-      DB_PORT: 5432         # ← adicionar
-      DB_USER: admin         # ← adicionar
-      DB_PASSWORD: admin      # ← adicionar
-      DB_NAME: tarefas   
     container_name: jenkins
     restart: on-failure
     ports:

@@ -27,6 +27,26 @@ POSTGRES_TEST_ENV = {
     "DB_NAME": os.getenv("DB_NAME", "tarefas"),
 }
 
+# Variáveis que, se presentes no ambiente (ex: definidas no docker-compose.yml
+# do serviço "jenkins" para os testes de integração com Postgres), fariam o
+# GerenciadorTarefas() escolher o PostgresTarefaRepository por padrão em
+# TODOS os testes — inclusive nos que esperam isolamento via JSON em memória.
+_VARS_POSTGRES = ["DB_HOST", "DB_PORT", "DB_USER", "DB_PASSWORD", "DB_NAME"]
+
+
+@pytest.fixture(autouse=True)
+def isolar_variaveis_postgres(monkeypatch, request):
+    """Remove as variáveis de Postgres do ambiente por padrão, para que
+    GerenciadorTarefas() sem argumentos sempre caia no JSONTarefaRepository
+    (isolado, em memória) nos testes comuns.
+
+    Os testes que precisam de Postgres de verdade usam explicitamente as
+    fixtures `postgres_env` / `postgres_repo`, que repõem essas variáveis
+    sob controle, então não são afetados por esta fixture.
+    """
+    for var in _VARS_POSTGRES:
+        monkeypatch.delenv(var, raising=False)
+
 
 def _conectar_postgres():
     return psycopg2.connect(
@@ -78,10 +98,8 @@ def postgres_env(monkeypatch, postgres_disponivel):
     se não houver um banco acessível (ex: execução local sem docker-compose)."""
     if not postgres_disponivel:
         pytest.skip("PostgreSQL não disponível para testes de integração")
-
     for chave, valor in POSTGRES_TEST_ENV.items():
         monkeypatch.setenv(chave, valor)
-
     _limpar_tabela_tarefas()
     yield POSTGRES_TEST_ENV
     _limpar_tabela_tarefas()
@@ -90,5 +108,4 @@ def postgres_env(monkeypatch, postgres_disponivel):
 @pytest.fixture
 def postgres_repo(postgres_env):
     from src.repositories.postgres_repo import PostgresTarefaRepository
-
     return PostgresTarefaRepository()
