@@ -30,7 +30,7 @@ POSTGRES_TEST_ENV = {
 # Variáveis que, se presentes no ambiente (ex: definidas no docker-compose.yml
 # do serviço "jenkins" para os testes de integração com Postgres), fariam o
 # GerenciadorTarefas() escolher o PostgresTarefaRepository por padrão em
-# TODOS os testes — inclusive nos que esperam isolamento via JSON em memória.
+# TODOS os testes -- inclusive nos que esperam isolamento via JSON em memória.
 _VARS_POSTGRES = ["DB_HOST", "DB_PORT", "DB_USER", "DB_PASSWORD", "DB_NAME"]
 
 
@@ -41,7 +41,7 @@ def isolar_variaveis_postgres(request, monkeypatch):
     (isolado, em memória) nos testes comuns.
 
     Se o teste já depende explicitamente de `postgres_env` (ou `postgres_repo`,
-    que depende de `postgres_env`), esta fixture não faz nada — evitando que
+    que depende de `postgres_env`), esta fixture não faz nada -- evitando que
     ela apague, por ordem de execução, as variáveis que o próprio teste pediu
     para ter configuradas.
     """

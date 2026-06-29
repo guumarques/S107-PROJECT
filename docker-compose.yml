@@ -8,6 +8,11 @@ services:
     environment:
       SMTP_HOST: mailhog
       SMTP_PORT: 1025
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: admin
+      DB_PASSWORD: admin
+      DB_NAME: tarefas
     container_name: jenkins
     restart: on-failure
     ports:
